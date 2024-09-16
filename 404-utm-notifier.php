@@ -2,7 +2,8 @@
 /*
 Plugin Name: 404 UTM Notifier
 Description: Sends an email to the admin when a 404 error occurs with UTM parameters present
-Version: 1.0
+Version: 1.0.1
+Author URI:      https://github.com/mateusz-zadorozny
 Author: Mateusz Zadorożny
 */
 
