@@ -16,12 +16,22 @@ class UTM_404_Notifier
 
     public function check_404_and_utm()
     {
+        // Zaczynamy mierzenie czasu
+        $start_time = microtime(true);
+
         if (is_404()) {
             $utm_params = $this->get_utm_params();
             if (!empty($utm_params)) {
                 $this->send_email_notification($utm_params);
             }
         }
+
+        // Kończymy mierzenie czasu
+        $end_time = microtime(true);
+        $execution_time_ms = ($end_time - $start_time) * 1000;
+
+        // Logujemy czas wykonania w milisekundach
+        error_log("Execution time of check_404_and_utm: " . $execution_time_ms . " ms");
     }
 
     private function get_utm_params()
