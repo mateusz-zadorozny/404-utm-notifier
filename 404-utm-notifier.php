@@ -2,7 +2,7 @@
 /*
 Plugin Name: 404 UTM Notifier
 Description: Sends an email to the admin when a 404 error occurs with UTM parameters present
-Version: 1.0.1
+Version: 1.0.2
 Author URI:      https://github.com/mateusz-zadorozny
 Author: Mateusz Zadorożny
 */
@@ -27,7 +27,7 @@ class UTM_404_Notifier
     private function get_utm_params()
     {
         $utm_params = array();
-        $possible_params = array('utm_source', 'utm_medium', 'utm_campaign');
+        $possible_params = array('utm_source', 'utm_medium', 'utm_campaign', 'utm_content');
 
         foreach ($possible_params as $param) {
             if (isset($_GET[$param])) {
